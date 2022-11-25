@@ -5,8 +5,115 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_WeatherApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" 
+        Height="600"  
+        Width="920"
+        ResizeMode="NoResize"
+        FontFamily="Encode Sans"
+        Background="Transparent">
+
+    <Border Background="#181A1E"
+            CornerRadius="36">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0"
+                        Background="#24272D"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center" Width="320">
+                <TextBlock Text="WeatherApp"
+                           HorizontalAlignment="Left"
+                           Margin="20,10,0,0"
+                           Foreground="White"
+                           FontSize="35"
+                           FontWeight="SemiBold"/>
+                <Image Source="{StaticResource brandIcon}"
+                       Width="44"
+                       Height="44"
+                       Margin="10,0,0,0"></Image>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Background="#24272D">
+                <Button Style="{DynamicResource MenuActive}"
+                        Height="44" 
+                        Margin="31,10,31,5">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left" 
+                                Width="165">
+                        <Image Source="{StaticResource activeToday}" 
+                               Width="22" 
+                               Margin="0,8,21,8" 
+                               Height="21"/>
+                        <TextBlock Text="Hari Ini" 
+                                   FontSize="16" 
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                
+                <Button Style="{DynamicResource Menu}"
+                        Height="44" 
+                        Margin="31,5">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left" 
+                                Width="165">
+                        <Image Source="{StaticResource tomorrow}" 
+                               Width="22" 
+                               Margin="0,8,21,8" 
+                               Height="21"/>
+                        <TextBlock Text="Besok" 
+                                   FontSize="16" 
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{DynamicResource Menu}"
+                        Height="44" 
+                        Margin="31,5">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left" 
+                                Width="165">
+                        <Image Source="{StaticResource weekly}" 
+                               Width="22" 
+                               Margin="0,8,21,8" 
+                               Height="21"/>
+                        <TextBlock Text="6 Hari Kedepan" 
+                                   FontSize="16" 
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center">
+                <Button Style="{DynamicResource SearchBar}"
+                        Height="44" 
+                        Margin="31,5">
+                    <StackPanel Orientation="Horizontal"
+                                Width="504">
+                        <Image Source="{StaticResource search}" 
+                               Width="22" 
+                               Margin="0,8,21,8" 
+                               Height="21"/>
+                        <TextBox Text="Cari Lokasi ..."
+                                 FontSize="16" 
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 Foreground="#ADADAD"
+                                 VerticalAlignment="Center" 
+                                 Width="460" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+
         
-    </Grid>
-</Window>
+    </Border>
+</Window> 

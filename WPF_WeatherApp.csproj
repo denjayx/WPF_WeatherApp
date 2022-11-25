@@ -67,6 +67,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="theme\ButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,5 +98,28 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\0.png" />
+    <Resource Include="assets\cerahBerawan.png" />
+    <Resource Include="assets\cerah.png" />
+    <Resource Include="assets\gerimis.png" />
+    <Resource Include="assets\hujan.png" />
+    <Resource Include="assets\search_ic.png" />
+    <Resource Include="assets\today_ic.png" />
+    <Resource Include="assets\tomorrow_ic.png" />
+    <Resource Include="assets\weekly_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\brandIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\buttonTodayActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\active_today_ic.png" />
+    <Resource Include="assets\active_tomorrow_ic.png" />
+    <Resource Include="assets\active_weekly_ic.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

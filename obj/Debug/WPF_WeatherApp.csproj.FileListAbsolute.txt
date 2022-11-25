@@ -1,0 +1,17 @@
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.csprojAssemblyReference.cache
+D:\Code\WPF_WeatherApp\obj\Debug\App.g.cs
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp_MarkupCompile.cache
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp_MarkupCompile.lref
+D:\Code\WPF_WeatherApp\bin\Debug\WPF_WeatherApp.exe.config
+D:\Code\WPF_WeatherApp\bin\Debug\WPF_WeatherApp.exe
+D:\Code\WPF_WeatherApp\bin\Debug\WPF_WeatherApp.pdb
+D:\Code\WPF_WeatherApp\obj\Debug\MainWindow.g.cs
+D:\Code\WPF_WeatherApp\obj\Debug\App.baml
+D:\Code\WPF_WeatherApp\obj\Debug\MainWindow.baml
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.g.resources
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.Properties.Resources.resources
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.csproj.GenerateResource.cache
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.csproj.CoreCompileInputs.cache
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.exe
+D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.pdb
+D:\Code\WPF_WeatherApp\obj\Debug\theme\ButtonTheme.baml
