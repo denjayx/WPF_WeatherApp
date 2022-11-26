@@ -13,9 +13,12 @@
             <BitmapImage x:Key="cerahBerawan" UriSource="assets/cerahBerawan.png"></BitmapImage>
             <BitmapImage x:Key="gerimis" UriSource="assets/gerimis.png"></BitmapImage>
             <BitmapImage x:Key="hujan" UriSource="assets/hujan.png"></BitmapImage>
+            <BitmapImage x:Key="hujanPetir" UriSource="assets/hujanPetir.png"></BitmapImage>
             <BitmapImage x:Key="search" UriSource="assets/search_ic.png"></BitmapImage>
             <BitmapImage x:Key="today" UriSource="assets/today_ic.png"></BitmapImage>
             <BitmapImage x:Key="activeToday" UriSource="assets/active_today_ic.png"></BitmapImage>
+            <BitmapImage x:Key="activeTomorrow" UriSource="assets/active_tomorrow_ic.png"></BitmapImage>
+            <BitmapImage x:Key="activeWeekly" UriSource="assets/active_weekly_ic.png"></BitmapImage>
             <BitmapImage x:Key="tomorrow" UriSource="assets/tomorrow_ic.png"></BitmapImage>
             <BitmapImage x:Key="weekly" UriSource="assets/weekly_ic.png"></BitmapImage>
             <Style x:Key="RoundedBorder" TargetType="{x:Type Border}"/>
