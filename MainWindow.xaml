@@ -8,6 +8,7 @@
         Title="MainWindow" 
         Height="600"  
         Width="920"
+        WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize"
         FontFamily="Encode Sans"
         Background="Transparent">
@@ -17,13 +18,13 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="594"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="65"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
-            
+
             <StackPanel Grid.Row="0"
                         Background="#24272D"
                         Orientation="Horizontal"
@@ -57,7 +58,7 @@
                                    VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
-                
+
                 <Button Style="{DynamicResource Menu}"
                         Height="44" 
                         Margin="31,5">
@@ -96,7 +97,7 @@
                         Height="44" 
                         Margin="31,5">
                     <StackPanel Orientation="Horizontal"
-                                Width="504">
+                                Width="484">
                         <Image Source="{StaticResource search}" 
                                Width="22" 
                                Margin="0,8,21,8" 
@@ -112,8 +113,63 @@
                 </Button>
             </StackPanel>
 
+            <Border  Grid.Column="1" 
+                     Grid.Row="1" 
+                     Background="#24272D" 
+                     Margin="114,27,114,183"
+                     CornerRadius="24">
+                <StackPanel Margin="41,36">
+                    <Label Content="Hari Ini"
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       FontSize="35" Margin="77,0,76,0"/>
+                    <Label Content="10:00 PM"
+                           HorizontalAlignment="Center"
+                           HorizontalContentAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="White"
+                           FontSize="18" />
+                    <StackPanel Height="80"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Label HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Content="15°"
+                               FontWeight="Bold"
+                               FontSize="25"
+                               Foreground="White"></Label>
+                        <Image Source="{StaticResource ResourceKey=cerahBerawan}" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    <Label Content="Cerah Berawan"
+                               HorizontalAlignment="Center"
+                               HorizontalContentAlignment="Center"
+                               VerticalAlignment="Top"
+                               Foreground="White"
+                               FontSize="18"
+                               Margin="10"
+                               FontWeight="SemiBold"/>
+                </StackPanel>
+            </Border>
+
+            <StackPanel Grid.Column="1" 
+                        Grid.Row="1" Margin="0,352,0,0">
+                <Label Content="Sleman, Yogyakarta"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       Foreground="#BD842E"
+                       FontSize="28" 
+                       Margin="77,0,76,0"/>
+                <TextBlock Text="Hari ini cuacanya Cerah Berawan, Semoga Aktivitasmu Lancar"
+                          TextAlignment="Center"
+                           Foreground="#8B8787"
+                           FontSize="16" 
+                           Width="366"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+
         </Grid>
 
-        
+
     </Border>
 </Window> 
