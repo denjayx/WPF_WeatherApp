@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_WeatherApp"
+        xmlns:viewmodels="clr-namespace:WPF_WeatherApp.ViewModels" 
+        xmlns:views="clr-namespace:WPF_WeatherApp.Views" 
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="600"  
@@ -12,9 +14,18 @@
         ResizeMode="NoResize"
         FontFamily="Encode Sans"
         Background="Transparent">
-
-    <Border Background="#181A1E"
-            CornerRadius="36">
+    <Window.Resources>
+        <DataTemplate x:Name="TodayViewTemplate" DataType="{x:Type viewmodels:TodayVM}">
+            <views:TodayView DataContext="{Binding}"></views:TodayView>
+        </DataTemplate>
+        <DataTemplate x:Name="TomorrowViewTemplate" DataType="{x:Type viewmodels:TomorrowVM}">
+            <views:TomorrowView DataContext="{Binding}"></views:TomorrowView>
+        </DataTemplate>
+        <DataTemplate x:Name="WeeklyViewTemplate" DataType="{x:Type viewmodels:WeeklyVM}">
+            <views:WeeklyView DataContext="{Binding}"></views:WeeklyView>
+        </DataTemplate>
+    </Window.Resources>
+    <Border Background="#181A1E">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320"/>
@@ -22,80 +33,89 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="65"/>
-                <RowDefinition />
+                <RowDefinition Height="506" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0"
-                        Background="#24272D"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Center" Width="320">
-                <TextBlock Text="WeatherApp"
-                           HorizontalAlignment="Left"
-                           Margin="20,10,0,0"
-                           Foreground="White"
-                           FontSize="35"
-                           FontWeight="SemiBold"/>
-                <Image Source="{StaticResource brandIcon}"
-                       Width="44"
-                       Height="44"
-                       Margin="10,0,0,0"></Image>
-            </StackPanel>
-
-            <StackPanel Grid.Row="1"
+            <DockPanel Grid.Column="0" 
+                       Grid.Row="0" 
+                       Grid.RowSpan="2"
+                       Background="#24272D">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel HorizontalAlignment="Center"
+                            Background="#24272D"
+                            Orientation="Horizontal"
+                            Width="320">
+                        <TextBlock Text="WeatherApp"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="20,10,0,0"
+                               Foreground="White"
+                               FontSize="35"
+                               FontWeight="SemiBold"/>
+                        <Image Source="{StaticResource brandIcon}"
+                           Width="44"
+                           Height="44"
+                           Margin="8,10"
+                           VerticalAlignment="Top"></Image>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"
                         Background="#24272D">
-                <Button Style="{DynamicResource MenuActive}"
-                        Height="44" 
-                        Margin="31,10,31,5">
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Left" 
-                                Width="165">
-                        <Image Source="{StaticResource activeToday}" 
-                               Width="22" 
-                               Margin="0,8,21,8" 
-                               Height="21"/>
-                        <TextBlock Text="Hari Ini" 
-                                   FontSize="16" 
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
-                </Button>
+                        <Button Click="Today_Clicked" Style="{DynamicResource Menu}"
+                                Height="44" 
+                                Margin="31,10,31,5">
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Left" 
+                                        Width="165">
+                                <Image Source="{StaticResource today}" 
+                                       Width="22" 
+                                       Margin="0,8,21,8" 
+                                       Height="21"/>
+                                <TextBlock Text="Hari Ini" 
+                                           FontSize="16" 
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
 
-                <Button Style="{DynamicResource Menu}"
+                        <Button Click="Tomorrow_Clicked" Style="{DynamicResource Menu}"
                         Height="44" 
                         Margin="31,5">
-                    <StackPanel Orientation="Horizontal"
+                            <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Left" 
                                 Width="165">
-                        <Image Source="{StaticResource tomorrow}" 
+                                <Image Source="{StaticResource tomorrow}" 
                                Width="22" 
                                Margin="0,8,21,8" 
                                Height="21"/>
-                        <TextBlock Text="Besok" 
+                                <TextBlock Text="Besok" 
                                    FontSize="16" 
                                    VerticalAlignment="Center" />
-                    </StackPanel>
-                </Button>
-                <Button Style="{DynamicResource Menu}"
+                            </StackPanel>
+                        </Button>
+                        <Button Click="Weekly_Clicked" Style="{DynamicResource Menu}"
                         Height="44" 
                         Margin="31,5">
-                    <StackPanel Orientation="Horizontal"
+                            <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Left" 
                                 Width="165">
-                        <Image Source="{StaticResource weekly}" 
+                                <Image Source="{StaticResource weekly}" 
                                Width="22" 
                                Margin="0,8,21,8" 
                                Height="21"/>
-                        <TextBlock Text="6 Hari Kedepan" 
+                                <TextBlock Text="6 Hari Kedepan" 
                                    FontSize="16" 
                                    VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
-                </Button>
-            </StackPanel>
-
-            <StackPanel Grid.Column="1"
-                        VerticalAlignment="Center">
+                </StackPanel>
+            </DockPanel>
+            <StackPanel Grid.Column="1" 
+                        Grid.Row="0" 
+                        VerticalAlignment="Center" 
+                        Height="65">
                 <Button Style="{DynamicResource SearchBar}"
                         Height="44" 
-                        Margin="31,5">
+                        Margin="31,10">
                     <StackPanel Orientation="Horizontal"
                                 Width="484">
                         <Image Source="{StaticResource search}" 
@@ -112,33 +132,32 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-
-            <Border  Grid.Column="1" 
-                     Grid.Row="1" 
-                     Background="#24272D" 
-                     Margin="114,27,114,183"
-                     CornerRadius="24">
+            <Border Grid.Column="1" 
+                        Grid.Row="1"
+                        Background="#24272D" 
+                        Margin="114,27,114,183"
+                        CornerRadius="24">
                 <StackPanel Margin="41,36">
                     <Label Content="Hari Ini"
-                       VerticalAlignment="Top"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       FontSize="35" Margin="77,0,76,0"/>
-                    <Label Content="10:00 PM"
-                           HorizontalAlignment="Center"
-                           HorizontalContentAlignment="Center"
-                           VerticalAlignment="Top"
-                           Foreground="White"
-                           FontSize="18" />
-                    <StackPanel Height="80"
-                                Orientation="Horizontal"
-                                HorizontalAlignment="Center">
-                        <Label HorizontalAlignment="Left"
-                               VerticalAlignment="Center"
-                               Content="15°"
+                               VerticalAlignment="Top"
                                FontWeight="Bold"
-                               FontSize="25"
-                               Foreground="White"></Label>
+                               Foreground="White"
+                               FontSize="35" Margin="77,0,76,0"/>
+                    <Label Content="10:00 PM"
+                               HorizontalAlignment="Center"
+                               HorizontalContentAlignment="Center"
+                               VerticalAlignment="Top"
+                               Foreground="White"
+                               FontSize="18" />
+                    <StackPanel Height="80"
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                        <Label HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Content="15°"
+                                   FontWeight="Bold"
+                                   FontSize="25"
+                                   Foreground="White"></Label>
                         <Image Source="{StaticResource ResourceKey=cerahBerawan}" HorizontalAlignment="Right"/>
                     </StackPanel>
                     <Label Content="Cerah Berawan"
@@ -155,21 +174,26 @@
             <StackPanel Grid.Column="1" 
                         Grid.Row="1" Margin="0,352,0,0">
                 <Label Content="Sleman, Yogyakarta"
-                       HorizontalAlignment="Center"
-                       FontWeight="Bold"
-                       Foreground="#BD842E"
-                       FontSize="28" 
-                       Margin="77,0,76,0"/>
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"
+                           Foreground="#BD842E"
+                           FontSize="28" 
+                           Margin="77,0,76,0"/>
                 <TextBlock Text="Hari ini cuacanya Cerah Berawan, Semoga Aktivitasmu Lancar"
-                          TextAlignment="Center"
-                           Foreground="#8B8787"
-                           FontSize="16" 
-                           Width="366"
-                           TextWrapping="Wrap"/>
+                               TextAlignment="Center"
+                               Foreground="#8B8787"
+                               FontSize="16" 
+                               Width="366"
+                               TextWrapping="Wrap"/>
             </StackPanel>
 
+            <ContentControl Grid.Column="1" 
+                            Grid.Row="1" 
+                            Grid.RowSpan="2"
+                            Content="{Binding}">
+            </ContentControl>
+
+                
         </Grid>
-
-
     </Border>
 </Window> 

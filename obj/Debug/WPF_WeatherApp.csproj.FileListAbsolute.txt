@@ -1,4 +1,3 @@
-D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.csprojAssemblyReference.cache
 D:\Code\WPF_WeatherApp\obj\Debug\App.g.cs
 D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp_MarkupCompile.cache
 D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp_MarkupCompile.lref
@@ -15,3 +14,10 @@ D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.csproj.CoreCompileInputs.cache
 D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.exe
 D:\Code\WPF_WeatherApp\obj\Debug\WPF_WeatherApp.pdb
 D:\Code\WPF_WeatherApp\obj\Debug\theme\ButtonTheme.baml
+D:\Code\WPF_WeatherApp\obj\Debug\Views\TodayView.g.cs
+D:\Code\WPF_WeatherApp\obj\Debug\Views\TomorrowView.g.cs
+D:\Code\WPF_WeatherApp\obj\Debug\Views\WeeklyView.g.cs
+D:\Code\WPF_WeatherApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Code\WPF_WeatherApp\obj\Debug\Views\TodayView.baml
+D:\Code\WPF_WeatherApp\obj\Debug\Views\TomorrowView.baml
+D:\Code\WPF_WeatherApp\obj\Debug\Views\WeeklyView.baml

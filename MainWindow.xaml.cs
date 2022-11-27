@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_WeatherApp.ViewModels;
 
 namespace WPF_WeatherApp
 {
@@ -25,14 +26,17 @@ namespace WPF_WeatherApp
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Today_Clicked(object sender, RoutedEventArgs e)
         {
-
+            DataContext = new TodayVM();
         }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void Tomorrow_Clicked(object sender, RoutedEventArgs e)
         {
-
+            DataContext = new TomorrowVM();
+        }
+        private void Weekly_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new WeeklyVM();
         }
     }
 }

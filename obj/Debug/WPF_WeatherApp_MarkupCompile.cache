@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Code\WPF_WeatherApp\App.xaml
-2-1550202576
+5-1584841323
 
-5-2017746502
+11146200100
 13-1505183044
-MainWindow.xaml;theme\ButtonTheme.xaml;
+MainWindow.xaml;Views\TodayView.xaml;Views\TomorrowView.xaml;Views\WeeklyView.xaml;theme\ButtonTheme.xaml;
 
 False
 

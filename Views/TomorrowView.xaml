@@ -5,8 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_WeatherApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="506" d:DesignWidth="594">
+    <Grid Background="#181A1E">
+        <Border  Grid.Column="1" 
+                     Grid.Row="1" 
+                     Background="#24272D" 
+                     Margin="114,27,114,183"
+                     CornerRadius="24">
+            <StackPanel Margin="41,36">
+                <Label Content="Besok"
+                           VerticalAlignment="Top"
+                           HorizontalContentAlignment="Center"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           FontSize="35" Margin="77,0,76,0"/>
+                <Label Content="10:00 PM"
+                           HorizontalAlignment="Center"
+                           HorizontalContentAlignment="Center"
+                           VerticalAlignment="Top"
+                           Foreground="White"
+                           FontSize="18" />
+                <StackPanel Height="80"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                    <Label HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Content="15°"
+                               FontWeight="Bold"
+                               FontSize="25"
+                               Foreground="White"></Label>
+                    <Image Source="{StaticResource ResourceKey=gerimis}" HorizontalAlignment="Right"/>
+                </StackPanel>
+                <Label Content="Mendung"
+                               HorizontalAlignment="Center"
+                               HorizontalContentAlignment="Center"
+                               VerticalAlignment="Top"
+                               Foreground="White"
+                               FontSize="18"
+                               Margin="10"
+                               FontWeight="SemiBold"/>
+            </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Column="1" 
+                        Grid.Row="1" Margin="0,352,0,0">
+            <Label Content="Sleman, Yogyakarta"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       Foreground="#BD842E"
+                       FontSize="28" 
+                       Margin="77,0,76,0"/>
+            <TextBlock Text="Sepertinya cuaca besok tidak baik untuk aktivitas keluar rumah, Siapkan payung buat aktivitas besok yah"
+                          TextAlignment="Center"
+                           Foreground="#ADADAD"
+                           FontSize="16"
+                           TextWrapping="Wrap" Margin="98,0"/>
+        </StackPanel>
     </Grid>
 </UserControl>

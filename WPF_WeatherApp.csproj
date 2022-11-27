@@ -59,13 +59,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\TodayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TomorrowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WeeklyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\TodayVM.cs" />
+    <Compile Include="ViewModels\TomorrowVM.cs" />
+    <Compile Include="ViewModels\WeeklyVM.cs" />
+    <Compile Include="Views\TodayView.xaml.cs">
+      <DependentUpon>TodayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TomorrowView.xaml.cs">
+      <DependentUpon>TomorrowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeeklyView.xaml.cs">
+      <DependentUpon>WeeklyView.xaml</DependentUpon>
     </Compile>
     <Page Include="theme\ButtonTheme.xaml">
       <SubType>Designer</SubType>
@@ -120,6 +143,11 @@
     <Resource Include="assets\active_tomorrow_ic.png" />
     <Resource Include="assets\active_weekly_ic.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="assets\hujanPetir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
